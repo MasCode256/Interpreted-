@@ -1,7 +1,6 @@
 @echo off
 chcp 65001 > nul 2>&1
 
-echo EXECUTING ARCHIVE
 title %1% -- Interpreted archived program
 
 set spth=%cd%
@@ -15,14 +14,10 @@ cd /d "%~dp0/temp/%pth%"
 
 
 cd %spth%
-echo test
 call %~dp0/temp/%pth%/main.cmd
-echo test
 
-cd /d "%~dp0/temp" > nul 2>&1
-echo test
-echo pth: %pth%
+cd /d "%~dp0/temp"
 
-rmdir /s /q %pth%
+rmdir /s /q %pth% > nul 2>&1
 
-cd %spth% > nul 2>&
+cd %spth%
